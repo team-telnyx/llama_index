@@ -88,7 +88,7 @@ class Telnyx(OpenAILike):
             model=model,
             api_key=api_key,
             api_base=api_base,
-            is_webchat_model=True,
+            is_chat_model=True,
             is_function_calling_model=True,
             context_window=kwargs.pop("context_window", 131072),
             **kwargs,

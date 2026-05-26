@@ -48,6 +48,13 @@ def test_telnyx_api_base_custom():
 
 
 @patch.dict(os.environ, {"TELNYX_API_KEY": "test-key"})
+def test_telnyx_is_chat_model():
+    """Verify chat model flag is set — ensures routing to /chat/completions."""
+    llm = Telnyx()
+    assert llm.metadata.is_chat_model is True
+
+
+@patch.dict(os.environ, {"TELNYX_API_KEY": "test-key"})
 def test_telnyx_is_function_calling_model():
     """Verify function calling flag is set."""
     llm = Telnyx()
