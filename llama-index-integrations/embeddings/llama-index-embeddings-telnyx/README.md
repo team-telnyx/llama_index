@@ -63,6 +63,16 @@ print(response)
 
 - `thenlper/gte-large`
 
+## Configuration
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `model_name` | `thenlper/gte-large` | Embedding model ID |
+| `api_key` | `TELNYX_API_KEY` env var | Telnyx API key |
+| `api_base` | `https://api.telnyx.com/v2/ai/openai` | API base URL (override via `TELNYX_API_BASE` env var) |
+| `embed_batch_size` | `10` | Batch size for embedding requests |
+| `dimensions` | `None` | Output dimensions (model default if not set) |
+
 See the full list at [developers.telnyx.com/docs/inference/models](https://developers.telnyx.com/docs/inference/models).
 
 ## Resources

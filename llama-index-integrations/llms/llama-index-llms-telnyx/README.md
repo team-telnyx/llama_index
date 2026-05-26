@@ -15,7 +15,7 @@ pip install llama-index-llms-telnyx
 Get an API key from the [Telnyx Mission Control Portal](https://portal.telnyx.com/) and set it as an environment variable:
 
 ```bash
-export TELNYX_API_KEY="KEY_ID_SECRET"
+export TELNYX_API_KEY="your-api-key"
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ messages = [
     ChatMessage(role="system", content="You are a helpful assistant."),
     ChatMessage(role="user", content="Explain WebRTC in simple terms."),
 ]
-response = llm.webchat(messages)
+response = llm.chat(messages)
 print(response)
 ```
 
@@ -73,6 +73,17 @@ async def main():
 
 asyncio.run(main())
 ```
+
+## Configuration
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `model` | `meta-llama/Llama-3.3-70B-Instruct` | Model ID to use |
+| `api_key` | `TELNYX_API_KEY` env var | Telnyx API key |
+| `api_base` | `https://api.telnyx.com/v2/ai/openai` | API base URL (override via `TELNYX_API_BASE` env var) |
+| `context_window` | `131072` | Context window size |
+| `temperature` | `0.1` | Sampling temperature |
+| `max_tokens` | `None` | Max tokens to generate |
 
 ## Available Models
 

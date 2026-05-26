@@ -59,7 +59,7 @@ class Telnyx(OpenAILike):
             ChatMessage(role="system", content="You are a helpful assistant."),
             ChatMessage(role="user", content="What is Telnyx?"),
         ]
-        response = llm.webchat(messages)
+        response = llm.chat(messages)
         print(response)
         ```
     """
